@@ -1,4 +1,2 @@
-Mozilla/5.0 (compatible; Discordbot/2.0; +https://discord.com)
-OTM3Mzc4NzM0MTkxODE2Nzk1.Yl6XRQ.xXO5Gtobr1eBYIDgbo74W_canSE
-https://discord.gg/Y4xFwQ9e
-978774952436183060
+can't be empty
+
