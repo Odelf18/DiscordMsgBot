@@ -105,12 +105,10 @@ def main(msg):
 
     send_message(get_connection(), text[3], dumps(message_data))
 
-myFile= open( "SomeFile.txt", "r" )
-myLines = list( myFile )
-myFile.close()
-print len(myLines), myLines
 
-msg_list=["Toto1", "Toto2", "toto3"]
+my_list = [line.split(',') for line in open("SomeFile.txt")]
+flat_list = [item for sublist in my_list for item in sublist]
+
 j=0
 if __name__ == '__main__':
     message = input("Message to send: ")
@@ -118,8 +116,11 @@ if __name__ == '__main__':
     main_wait = int(input("Seconds between messages: "))
     human_margin = int(input("Human error margin in seconds: "))
     print()
+    if len(flat_list)>= messages :
+        messages =  len(flat_list)-1
+        
     for i in range(0,messages):
-        main(msg_list[j])
+        main(flat_list[j])
         print("Estimated time to complete: " + str((messages-i) * (human_margin // 2 + main_wait) // 60) + " minutes.")
         print("Iteration " + str(i) + " complete.\n")
         sleep(main_wait)
