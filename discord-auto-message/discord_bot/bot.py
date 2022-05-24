@@ -115,12 +115,12 @@ if __name__ == '__main__':
     messages = int(input("Amount of messages: "))
     main_wait = int(input("Seconds between messages: "))
     human_margin = int(input("Human error margin in seconds: "))
-    
+    loop = input("Infinity loop? (y/n)")
     print()
     
     
-    if len(flat_list)>= messages :
-        messages =  len(flat_list)-1
+    if loop == 'y':
+        messages =  100000
 
     for i in range(0,messages):
         main(flat_list[j])
@@ -128,7 +128,10 @@ if __name__ == '__main__':
         print("Iteration " + str(i) + " complete.\n")
         sleep(main_wait)
         sleep(random()*human_margin)
-        j+=1
+        if j == len(flat_list)-1:
+            j=0
+        else:
+            j+=1
     
 
     print("Session complete! " + str(messages) + " messages sent.")
