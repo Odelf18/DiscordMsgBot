@@ -17,7 +17,11 @@ Navigate inside of the repo to the script, and run it. This requires Python to b
 % python3 bot.py --setall
 ```
 
-## Settings
+## info.txt
+
+The file is automatically filled with cmd
+
+
 Get you token: https://pcstrike.com/how-to-get-discord-token/#:~:text=A%20Discord%20token%20is%20a,of%20your%20username%20and%20password.
 Get channel url: use invite link
 Get channel id: Enable Dev mode on discord then right click on channel "Copy ID"
