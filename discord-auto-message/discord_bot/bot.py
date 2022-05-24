@@ -115,32 +115,20 @@ if __name__ == '__main__':
     messages = int(input("Amount of messages: "))
     main_wait = int(input("Seconds between messages: "))
     human_margin = int(input("Human error margin in seconds: "))
-    loop = input("Do you want to loop infinitly your message list?: y/n")
+    
     print()
     
-    if loop == "n" :
-        if len(flat_list)>= messages :
-            messages =  len(flat_list)-1
-
-        for i in range(0,messages):
-            main(flat_list[j])
-            print("Estimated time to complete: " + str((messages-i) * (human_margin // 2 + main_wait) // 60) + " minutes.")
-            print("Iteration " + str(i) + " complete.\n")
-            sleep(main_wait)
-            sleep(random()*human_margin)
-            j+=1
     
-    if loop == "y" :
-        messages = 100000000000
-        max_messages = len(flat_list)-1
-        for i in range(0,messages):
-            if i == max_messages:
-                j=0
-            main(flat_list[j])
-            print("Estimated time to complete: " + str((messages-i) * (human_margin // 2 + main_wait) // 60) + " minutes.")
-            print("Iteration " + str(i) + " complete.\n")
-            sleep(main_wait)
-            sleep(random()*human_margin)
-            j+=1
+    if len(flat_list)>= messages :
+        messages =  len(flat_list)-1
+
+    for i in range(0,messages):
+        main(flat_list[j])
+        print("Estimated time to complete: " + str((messages-i) * (human_margin // 2 + main_wait) // 60) + " minutes.")
+        print("Iteration " + str(i) + " complete.\n")
+        sleep(main_wait)
+        sleep(random()*human_margin)
+        j+=1
+    
 
     print("Session complete! " + str(messages) + " messages sent.")
